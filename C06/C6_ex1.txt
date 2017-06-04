@@ -1,0 +1,27 @@
+--Chapter 6.7 Exercises
+
+1) max (length [1, 2, 3]) (length [8, 9, 10, 11, 12])
+Should return 5
+
+Prelude> max (length [1, 2, 3]) (length [8, 9, 10, 11, 12])
+5
+
+2) compare (3 * 4) ( 3 * 5)
+Should return LT
+
+Prelude> compare (3 * 4) ( 3 * 5)
+LT
+
+3) compare "Julie" True
+Should return an error, String compared to Bool
+
+Prelude> compare "Julie" True
+
+<interactive>:27:17: error:
+    * Couldn't match expected type `[Char]' with actual type `Bool'
+
+4) (5 + 3) > (3 + 6)
+Should return False
+
+Prelude> (5 + 3) > (3 + 6)
+False

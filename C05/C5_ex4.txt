@@ -1,0 +1,49 @@
+-- Chapter 5.7 Exercises
+
+1) -- Type signature of general function
+(++) :: [a] -> [a] -> [a]
+
+-- How might that change when we apply
+-- it to the following value?
+
+myConcat x = x ++ " yo"
+
+--It should change to [Char] -> [Char] inferred by the String " yo"
+
+Prelude> :t myConcat
+myConcat :: [Char] -> [Char]
+
+
+2) -- General function
+(*) :: Num a => a -> a -> a
+
+-- Applied to a value
+myMult x = (x / 3) * 5
+
+-- Changes to Fractional because / is constrained in Fractional
+-- Fractional a => a -> a
+
+Prelude> :t myMult
+myMult :: Fractional a => a -> a
+
+
+3) take :: Int -> [a] -> [a]
+myTake x = take x "Hey you"
+
+-- Int -> [Char] 
+Prelude> :t myTake
+myTake :: Int -> [Char]
+
+4) (>) :: Ord a => a -> a -> Bool
+myCom x = x > (length [1..10])
+
+-- Int -> Bool; length returns Int
+Prelude> :t myCom
+myCom :: Int -> Bool
+
+5) (<) :: Ord a => a -> a -> Bool
+myAlph x = x < 'z'
+
+-- Char -> Bool; 'z' is Char, constrains x
+Prelude> :t myAlph
+myAlph :: Char -> Bool
